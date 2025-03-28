@@ -4,55 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InjeXcanner - SQL Injection Scanner</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="injexcanner.css">
 </head>
-<body class="bg-gray-100 text-gray-900">
-    <header class="bg-gray-800 text-white p-5 fixed w-full top-0 shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold">InjeXcanner</h1>
-            <nav>
-                <a href="#home" class="mx-3 hover:text-gray-300">Home</a>
-                <a href="#about" class="mx-3 hover:text-gray-300">About</a>
-                <a href="#scan" class="mx-3 hover:text-gray-300">Scan</a>
-                <a href="#contact" class="mx-3 hover:text-gray-300">Contact</a>
-            </nav>
-        </div>
+<body>
+    <header>
+        <h1>InjeXcanner</h1>
+        <p>SQL Injection Scanner & Vulnerability Detection</p>
     </header>
-    
-    <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-5">
-        <h2 class="text-4xl font-bold mb-4">Welcome to InjeXcanner</h2>
-        <p class="text-lg text-gray-700 mb-6">Your SQL Injection Detection & Classification Tool</p>
-        <a href="#scan" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700">Start Scanning</a>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#scan">Scan Now</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="about">
+        <h2>About InjeXcanner</h2>
+        <p>InjeXcanner is a powerful tool for detecting and classifying SQL Injection vulnerabilities.</p>
     </section>
-    
-    <section id="about" class="py-20 text-center bg-white shadow-md">
-        <h2 class="text-3xl font-semibold mb-4">About InjeXcanner</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">InjeXcanner helps detect SQL injection vulnerabilities and classifies them based on severity.</p>
+    <section id="features">
+        <h2>Features</h2>
+        <ul>
+            <li>Classic & Blind SQL Injection Detection</li>
+            <li>Severity Classification</li>
+            <li>Real-Time Dashboard</li>
+            <li>Automated Reports</li>
+        </ul>
     </section>
-    
-    <section id="scan" class="py-20 text-center">
-        <h2 class="text-3xl font-semibold mb-6">Scan a Website</h2>
-        <input type="text" id="url" placeholder="Enter website URL" class="px-4 py-2 border rounded-md w-80 shadow-sm">
-        <button onclick="scanWebsite()" class="bg-green-600 text-white px-6 py-2 rounded-md ml-2 hover:bg-green-700">Scan</button>
-        <p id="result" class="mt-4 text-gray-700"></p>
+    <section id="scan">
+        <h2>Scan Your Website</h2>
+        <input type="text" id="scan-url" placeholder="Enter website URL">
+        <button onclick="startScan()">Start Scan</button>
+        <div id="scan-results"></div>
     </section>
-    
-    <section id="contact" class="py-20 text-center bg-gray-200">
-        <h2 class="text-3xl font-semibold mb-4">Contact Us</h2>
-        <p class="text-gray-700">Email: support@injexcanner.com</p>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@injexcanner.com</p>
     </section>
-    
-    <script>
-        function scanWebsite() {
-            let url = document.getElementById('url').value;
-            let resultText = document.getElementById('result');
-            if (url) {
-                resultText.innerHTML = "<span class='text-blue-500 font-semibold'>Scanning " + url + "...</span>";
-                setTimeout(() => { resultText.innerHTML = "<span class='text-green-600 font-semibold'>Scan Complete! No vulnerabilities found.</span>"; }, 2000);
-            } else {
-                resultText.innerHTML = "<span class='text-red-500 font-semibold'>Please enter a valid URL.</span>";
-            }
-        }
-    </script>
+    <script src="injexcanner.js"></script>
 </body>
 </html>
