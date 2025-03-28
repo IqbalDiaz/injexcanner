@@ -1,4 +1,3 @@
-// injexcanner.js
 
 document.addEventListener("DOMContentLoaded", function () {
     console.log("InjeXcanner script loaded");
