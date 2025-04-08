@@ -1,0 +1,62 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif; /* Sets the font */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark gray text */
+}
+
+/* Header Section */
+header {
+    background: #222; /* Dark background */
+    color: white; /* White text */
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Navigation Bar */
+nav {
+    background: #333; /* Slightly lighter dark gray */
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Displays items in a single line */
+    margin: 0 15px; /* Adds space between menu items */
+}
+
+nav ul li a {
+    color: white; /* White text for links */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold; /* Makes text bold */
+}
+
+/* Section Styling */
+section {
+    padding: 20px;
+    margin: 20px;
+    background: white; /* White background for content sections */
+    border-radius: 5px; /* Rounds the corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+}
+
+/* Button Styling */
+button {
+    background: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer; /* Changes cursor to pointer */
+    border-radius: 5px; /* Rounds button corners */
+}
+
+button:hover {
+    background: #218838; /* Darker green on hover */
+}
