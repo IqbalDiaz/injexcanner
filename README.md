@@ -16,7 +16,7 @@ InjeXcanner is a web-based SQL Injection Scanner designed to detect and categori
 
 ## Demo
 
-Visit the project demo here: [https://iqbaldiaz.github.io/injexcanner/](#)
+Visit the project demo here: https://iqbaldiaz.github.io/injexcanner/
 
 ![Mockup demo](screenshots/pic.jpg)  
 Product mockup created with [Magic Mockups](http://magicmockups.com/).
