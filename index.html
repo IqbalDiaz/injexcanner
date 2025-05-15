@@ -3,57 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InjeXcanner - SQL Injection Scanner</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+    <title>InjeXcanner: SQL Injection Detection Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1>InjeXcanner</h1>
-        <p>SQL Injection Scanner & Vulnerability Detection</p>
-    </header>
-
-    <!-- Navigation Menu -->
-    <nav>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="profile">
+            <h1><i class="fas fa-shield-alt"></i> InjeXcanner</h1>
+            <h3>Welcome</h3>
+        </div>
+        <input type="text" placeholder="Search scans..." class="search">
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#scan">Scan Now</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" onclick="showSection('home')"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#" onclick="showSection('scan')"><i class="fas fa-search"></i> New Scan</a></li>
+            <li><a href="#" onclick="showSection('dashboard')"><i class="fas fa-chart-bar"></i> Dashboard</a></li>
+            <li><a href="#" onclick="showSection('history')"><i class="fas fa-history"></i> Scan History</a></li>
+            <li><a href="#" onclick="showSection('login')"><i class="fas fa-sign-in-alt"></i> Login/Signup</a></li>
         </ul>
-    </nav>
+    </div>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About InjeXcanner</h2>
-        <p>InjeXcanner is a powerful tool for detecting and classifying SQL Injection vulnerabilities.</p>
-    </section>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <h1>InjeXcanner</h1>
+                <p class="tagline">Advanced SQL Injection Detection and Reporting Tool</p>
+                <div class="cta-buttons">
+                    <button class="btn primary" onclick="showSection('scan')">Start Quick Scan</button>
+                    <button class="btn secondary" onclick="showSection('login')">Login for Full Features</button>
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Quick Scans</h3>
+                    <p>Run anonymous scans without logging in</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Comprehensive Reports</h3>
+                    <p>Detailed vulnerability analysis with severity levels</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Dashboard Analytics</h3>
+                    <p>Track your scan history and vulnerabilities over time</p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Features Section -->
-    <section id="features">
-        <h2>Features</h2>
-        <ul>
-            <li>Classic & Blind SQL Injection Detection</li>
-            <li>Severity Classification</li>
-            <li>Real-Time Dashboard</li>
-            <li>Automated Reports</li>
-        </ul>
-    </section>
+        <!-- Scan Section -->
+        <section id="scan" class="section">
+            <h1>New Vulnerability Scan</h1>
+            <div class="scan-form">
+                <div class="form-group">
+                    <label for="target-url">Target URL</label>
+                    <input type="url" id="target-url" placeholder="https://example.com">
+                </div>
+                
+                <div class="scan-options">
+                    <h3>Scan Type</h3>
+                    <div class="options">
+                        <label class="option-card">
+                            <input type="radio" name="scan-type" value="quick" checked>
+                            <div class="card-content">
+                                <i class="fas fa-bolt"></i>
+                                <h4>Quick Scan</h4>
+                                <p>Basic scan, no login required</p>
+                                <p class="note">Results won't be saved</p>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="scan-type" value="full">
+                            <div class="card-content">
+                                <i class="fas fa-search-plus"></i>
+                                <h4>Full Scan</h4>
+                                <p>Comprehensive analysis</p>
+                                <p class="note">Login required to save results</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <button class="btn primary" id="start-scan">Start Scan</button>
+            </div>
+        </section>
 
-    <!-- Scan Section -->
-    <section id="scan">
-        <h2>Scan Your Website</h2>
-        <input type="text" id="scan-url" placeholder="Enter website URL"> <!-- Input field for website URL -->
-        <button onclick="startScan()">Start Scan</button> <!-- Button to start the scan -->
-        <div id="scan-results"></div> <!-- Area to display scan results -->
-    </section>
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section">
+            <h1>Scan Dashboard</h1>
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Total Scans</h3>
+                    <p class="number">24</p>
+                </div>
+                <div class="stat-card warning">
+                    <h3>High Risk</h3>
+                    <p class="number">5</p>
+                </div>
+                <div class="stat-card danger">
+                    <h3>Critical</h3>
+                    <p class="number">2</p>
+                </div>
+                <div class="stat-card success">
+                    <h3>Secure</h3>
+                    <p class="number">17</p>
+                </div>
+            </div>
+            
+            <div class="charts">
+                <div class="chart-container">
+                    <h3>Vulnerabilities Over Time</h3>
+                    <div class="chart-placeholder"></div>
+                </div>
+                <div class="chart-container">
+                    <h3>Vulnerability Types</h3>
+                    <div class="chart-placeholder"></div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: support@injexcanner.com</p> <!-- Contact information -->
-    </section>
+        <!-- Scan History Section -->
+        <section id="history" class="section">
+            <h1>Scan History</h1>
+            <div class="history-filters">
+                <select>
+                    <option>All Severity</option>
+                    <option>Critical</option>
+                    <option>High</option>
+                    <option>Medium</option>
+                    <option>Low</option>
+                </select>
+                <input type="date" placeholder="From date">
+                <input type="date" placeholder="To date">
+                <button class="btn secondary">Filter</button>
+                <button class="btn primary">Export CSV</button>
+            </div>
+            
+            <table class="scan-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Target URL</th>
+                        <th>Vulnerabilities</th>
+                        <th>Severity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-05-15</td>
+                        <td>https://test-site.com</td>
+                        <td>3</td>
+                        <td><span class="badge high">High</span></td>
+                        <td><button class="btn small">View</button></td>
+                    </tr>
+                    <tr>
+                        <td>2023-05-10</td>
+                        <td>https://demo-app.org</td>
+                        <td>0</td>
+                        <td><span class="badge secure">Secure</span></td>
+                        <td><button class="btn small">View</button></td>
+                    </tr>
+                    <tr>
+                        <td>2023-05-05</td>
+                        <td>https://old-system.net</td>
+                        <td>5</td>
+                        <td><span class="badge critical">Critical</span></td>
+                        <td><button class="btn small">View</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+        <!-- Login/Signup Section -->
+        <section id="login" class="section">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="tab-btn active" onclick="switchTab('login-tab')">Login</button>
+                    <button class="tab-btn" onclick="switchTab('signup-tab')">Sign Up</button>
+                </div>
+                
+                <div id="login-tab" class="auth-tab active">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" placeholder="••••••••">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-otp">OTP (Check your email)</label>
+                        <input type="text" id="login-otp" placeholder="6-digit code">
+                    </div>
+                    <button class="btn primary">Login</button>
+                    <p class="auth-link">Forgot password? <a href="#">Reset</a></p>
+                </div>
+                
+                <div id="signup-tab" class="auth-tab">
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" placeholder="••••••••">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm">Confirm Password</label>
+                        <input type="password" id="signup-confirm" placeholder="••••••••">
+                    </div>
+                    <button class="btn primary">Sign Up</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
