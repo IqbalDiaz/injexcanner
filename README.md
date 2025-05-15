@@ -1,151 +1,161 @@
-# InjeXcanner - SQL Injection Scanner
+# 🛡️ InjeXcanner – SQL Injection Vulnerability Scanner
 
-InjeXcanner is a web-based SQL Injection Scanner designed to detect and categorize SQL Injection vulnerabilities in web applications, featuring real-time detection, severity classification, and a user-friendly dashboard.
+![Status](https://img.shields.io/badge/status-Completed-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Built With](https://img.shields.io/badge/built%20with-Python%20%7C%20HTML%20%7C%20CSS%20%7C%20JS-orange)
 
-**Project Title**: SQL Injection Scanner (InjeXcanner)  
-**Group Members**:  
+## 📌 Project Title
+**InjeXcanner: A Web-Based SQL Injection Vulnerability Scanner with Severity Classification and Reporting**
+
+## 👨‍💻 Team Members
 - Muhammad Luqman Aziem  
 - Nur Qurratu Aini Balqis  
 - Amirul Haziq  
 - Seri Mohd Nizam  
-- Iqbal
+- Muhammad Iqbal
 
-**Supervisor**: Noormelah Binti Shamsul Anuar  
-**Institution**: GMI (German-Malaysian Institute)  
-**Intake**: NWS/22/23A
+**Supervisor:** Pn. Noormelah Binti Shamsul Anuar  
+**Institution:** German-Malaysian Institute (GMI)  
+**Intake:** NWS/22/23A  
+**Program:** Diploma in Network Security
+
+---
+
+## 💡 Project Overview
+
+**InjeXcanner** is a complete web-based tool to detect, classify, and report SQL Injection (SQLi) vulnerabilities. It aims to help web developers and security analysts easily scan websites for SQLi issues, understand the severity, and generate reports with meaningful insights.
+
+---
+
+## 🎯 Objectives
+
+- ✅ Detect Classic & Blind SQL Injection vulnerabilities
+- ✅ Classify severity: Low / Medium / High
+- ✅ Save results in MySQL database
+- ✅ Real-time dashboard to view scan history
+- ✅ Generate exportable reports (CSV/PDF)
+
+---
+
+## 🔧 Tools & Technologies
+
+| Category        | Stack/Tool                         |
+|----------------|-------------------------------------|
+| Languages       | Python, HTML, CSS, JavaScript       |
+| Frameworks      | Flask, Bootstrap, Chart.js          |
+| Database        | MySQL                               |
+| Vulnerability Scanner | SQLMap                         |
+| Dev Tools       | PyCharm, VS Code                    |
+| Hardware        | ASUS TUF Gaming F15, MSI 24" Monitor |
+
+---
+
+## 🧪 Key Features
+
+### 1. 🔍 SQL Injection Detection
+- Integration with SQLMap to identify SQLi vulnerabilities
+- Supports GET/POST-based injections
+- Detects Classic and Blind SQLi types
+
+### 2. 🚨 Severity Classification
+- Custom classification logic (Low / Medium / High)
+- Based on exploitability, database access level, and injection type
+
+### 3. 📊 Real-Time Dashboard
+- Visual charts (pie/bar) of vulnerabilities
+- Timestamped scanning history
+- Built with Chart.js and Bootstrap
+
+### 4. 💾 Database Integration
+- Stores every scan result in MySQL
+- Enables future analysis and historical tracking
+
+### 5. 🧾 Reporting
+- Scan results exportable to CSV/PDF
+- Helpful for patching and documentation
+
+---
+
+## 📁 Project Structure
+```
+InjeXcanner/
+├── scanner/                  # SQLMap Integration Scripts
+├── web/                      # Frontend (HTML/CSS/JS)
+├── dashboard/                # Real-Time Dashboard
+├── classification/          # Severity Classification Logic
+├── database/                # MySQL Scripts
+├── reports/                 # Report Generator
+├── app.py                   # Main Flask App
+└── README.md                # Project Summary
+```
+---
+
+## 🗓️ Timeline & Milestones
+
+| Phase                       | Duration             | Team Members            |
+|----------------------------|----------------------|--------------------------|
+| SQL Injection Detection     | Jan 28 – Mar 21      | Seri, Aziem              |
+| Severity Classification     | Mar 22 – Apr 21      | Iqbal, Haziq             |
+| Real-Time Dashboard         | Apr 23 – May 20      | Aini                     |
+| Final Testing & Deployment  | May 21 – May 30      | All Members              |
+
+---
+
+## 🧠 Iqbal's Contribution
+
+- Designed and implemented **severity classification system**
+- Defined severity logic and built sample datasets
+- Assisted in frontend testing and dashboard UI integration
+- Helped in syncing backend logic with SQLMap output
+
+---
+
+## ⚠️ Challenges Faced
+
+- Syncing team schedules and task delegation
+- Automating SQLMap execution in a secure way
+- Dashboard real-time updates and error handling
+- Time management under academic pressure
+
+---
+
+## ✅ Outcomes
+
+- Successfully scanned and classified SQLi on test targets
+- Real-time dashboard and reporting functional
+- Full-stack web application completed and tested
+
+---
+
+## 📷 Screenshots (Coming Soon)
+*(Upload screenshots in your repo’s `/screenshots` folder and embed below)*
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
 
 ## Demo
 
 Visit the project demo here: https://iqbaldiaz.github.io/injexcanner/
 
-![Mockup demo](screenshots/pic.jpg)  
-Product mockup created with [Magic Mockups](http://magicmockups.com/).
+---
 
-## Contents
+## 📬 Contact
 
-- [Folder and file structure](#folder-and-file-structure)
-- [Requirements](#requirements)
-    - [Python and MySQL](#python-and-mysql)
-    - [Libraries](#libraries)
-- [How to start](#how-to-start)
-- [Project milestones](#project-milestones)
-- [Tasks](#tasks)
-    - [SQL Injection Detection](#sql-injection-detection)
-    - [Severity Classification](#severity-classification)
-    - [Real-Time Dashboard](#real-time-dashboard)
-- [License](#license)
+If you have any questions or ideas for improvement:
 
-## Folder and file structure
+**Muhammad Iqbal**  
+Email: *your_email@example.com*  
+GitHub: [@yourusername](https://github.com/yourusername)
 
-```
-./
-├── app.py                                   * Main Python script for running the scanner
-├── requirements.txt                        * Python dependencies
-├── README.md                               * Project documentation
-|
-├── screenshots/                            * Mockup and screenshot files
-|   ├── demo.jpg
-|
-├── dev/                                    * Source code
-|   ├── scanner/                            * SQL Injection scanning logic
-|   ├── db/                                 * Database schema and queries
-|   ├── frontend/                           * HTML, CSS, JavaScript for dashboard
-|   └── reports/                            * Scripts for generating reports
-|
-└── build/                                  * Production build
-    ├── index.html                          * Main website
-    ├── assets/                             * Minified static files
-        ├── css/
-        ├── js/
-        └── images/
-```
+---
 
-## Requirements
+## ⭐ Acknowledgments
 
-- **Python**: Version 3.x  
-- **MySQL**: Database for storing scan results  
-- **Libraries**:  
-  - `Flask` (for web interface)
-  - `SQLAlchemy` (for database interaction)
-  - `SQLMap` (for SQL injection detection)
-  - `Pandas` (for report generation)
-
-### Python and MySQL
-
-Make sure to have Python and MySQL installed. You can set up the database by running the schema in `dev/db/schema.sql`.
-
-### Libraries
-
-Install dependencies by running:
-
-```bash
-pip install -r requirements.txt
-```
-
-## How to start
-
-### Steps to set up:
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/InjeXcanner.git
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Set up the MySQL database by running the schema in `dev/db/schema.sql`.
-
-4. Run the application:
-
-   ```bash
-   python app.py
-   ```
-
-   This will start the scanner and the web interface on your local machine.
-
-## Project milestones
-
-### FYP01 (Research & Design Phase)
-- Research on SQL Injection types
-- Initial design and planning of the project
-- Environment setup and basic framework development
-
-### FYP02 (Implementation Phase)
-1. **SQL Injection Detection (1/28/2025 - 3/21/2025)**  
-   - Develop and integrate the SQL Injection scanner.
-
-2. **Severity Classification (3/22/2025 - 4/21/2025)**  
-   - Define criteria for classifying the severity of vulnerabilities.
-
-3. **Dashboard (4/23/2025 - 5/20/2025)**  
-   - Create a user-friendly dashboard to display scanning results.
-
-## Tasks
-
-### SQL Injection Detection
-
-- Modify and develop the source code to detect Classic and Blind SQL Injection vulnerabilities.
-- Integrate the scanner with the web application.
-
-### Severity Classification
-
-- Define the classification criteria for vulnerabilities (e.g., high, medium, low).
-- Develop a system to categorize vulnerabilities based on severity.
-- Integrate the classification system with the SQL Injection scanner.
-
-### Dashboard
-
-- Design and develop a dashboard to display the results of SQL Injection scans.
-- Implement historical data tracking and reporting.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
-This format organizes your FYP information into a clear structure similar to the example, making it easy for others to understand the setup, tasks, and overall project structure.
+- SQLMap (Open-source scanner)
+- Flask, Chart.js & Bootstrap communities
+- GMI lecturers and friends for feedback and guidance
